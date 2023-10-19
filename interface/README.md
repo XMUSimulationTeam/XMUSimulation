@@ -1,7 +1,7 @@
-# 通信接口程序文件  
+# B0-based Remote API(python)通信接口程序文件  
 程序文件分为两部分：  
   
-    environment：存放B0-based Remote API环境配置的14个标准文件。  
+    environment：存放B0-based Remote API(python)环境配置的14个标准文件。  
     
     interfacein.py：直接定义通信接口函数并调用的文件。
     interface_class.py：单独定义通信接口函数类的文件。
