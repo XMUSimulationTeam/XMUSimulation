@@ -12,6 +12,5 @@ with b0RemoteApi.RemoteApiClient('b0RemoteApi_V-REP', 'b0RemoteApi', 60) as clie
 
     # 调用上面函数
     args = [1, -1, -1, 1]
-    # ret = client.simxCallScriptFunction('myFunctionName@Robotnik_Summit_XL', 'sim.scripttype_childscript', args, client.simxServiceCall())
     ret = CallScriptFunction('myFunctionName', 'Robotnik_Summit_XL', 'sim.scripttype_childscript', args)
     print(ret)

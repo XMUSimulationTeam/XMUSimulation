@@ -24,17 +24,25 @@ class interface_class:
         itemlist = self.client.simxCallScriptFunction(FuncName+'@'+ObjName, scriptType, funcArgs, self.topic)
         return itemlist
 
-    # 功能：获得对象参数
+    # 功能：检索对象参数
     # 参数形式：list GetObjectParameter(string ObjName, number/string parameterID)
     # ObjName(string)：对象名称
     # parameterID(number/string)：待检索的参数的标识符
+    # paraType(string)：参数类型
     #
     # 返回参数itemlist中
     # item1 (bool)：函数在服务器端是否被成功调用
     # item2 (number)：检索到的参数
-    def GetObjectParameter(self, ObjName, parameterID):
+    def GetObjectParameter(self, ObjName, parameterID, paraType):
         ObjHandle = self.client.simxGetObjectHandle(ObjName, self.topic)
-        itemlist = self.client.simxGetObjectFloatParameter(ObjHandle[1], parameterID, self.topic)
+        if paraType == 'float':
+            itemlist = self.client.simxGetObjectFloatParameter(ObjHandle[1], parameterID, self.topic)
+        elif paraType == 'int':
+            itemlist = self.client.simxGetObjectIntParameter(ObjHandle[1], parameterID, self.topic)
+        elif paraType == 'string':
+            itemlist = self.client.simxGetObjectStringParameter(ObjHandle[1], parameterID, self.topic)
+        else:
+            itemlist = 'please choose float、int or string'
         return itemlist
 
     # 功能：设置对象参数

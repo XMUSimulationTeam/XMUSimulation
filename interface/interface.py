@@ -14,7 +14,7 @@ with b0RemoteApi.RemoteApiClient('b0RemoteApi_V-REP', 'b0RemoteApi', 60) as clie
     # print(itemlist)
 
     # 调用GetObjectParameter函数
-    # itemlist = interface_class.GetObjectParameter('joint_front_left_wheel', 2012)
+    # itemlist = interface_class.GetObjectParameter('joint_front_left_wheel', 2012, 'float')
     # print(itemlist)
 
     # 调用SetObjectParameter函数
